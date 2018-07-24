@@ -19,7 +19,7 @@
                         attrs="{'invisible':[('stage_state','in',['draft'])]}" 
                         string="Tonggle Done"
                         class="oe_highlight" />
-                <field name="stage_id"
+                <field name="stage_state"
                     widget="statusbar"
                     clickable="True"
                     options="{'fold_field': 'fold'}" />
@@ -44,7 +44,7 @@
                         <group name="group_left">
                             <field name="date_deadline" />
                             <separator string="Reference" />
-                            <field name="refers_to" />
+                            <field name="refers_to" attrs="{'invisible':[('stage_state', '=', ['draft'])]}"/>
                         </group>
                         <group name="group_right">
                             <field name="tag_ids" widget="many2many_tags" />
