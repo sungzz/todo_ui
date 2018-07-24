@@ -105,6 +105,12 @@ class TodoTask(models.Model):
         related='stage_id.state', 
         string='Stage State')
 
+    user_todo_count = fields.Integer(
+        'User To-Do Count',
+        compute='compute_user_todo_count')
+
+    effort_estimate = fields.Integer('Effort Estimate')    
+
     #below function for checking or validation, field name must input text up to 5 charachter
     @api.constrains('name')
     def _check_name_size(self):
@@ -123,4 +129,10 @@ class TodoTask(models.Model):
     def _write_stage_fold(self, operator, value):
         self.stage_id.fold = self.stage_fold
 
+    def compute_user_todo_count(self):
+        for task in self:
+            task.user_todo_count = task.search_count(
+                [('user_id', '=', task.user_id.id)])
+
+    
 

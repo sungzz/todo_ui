@@ -10,19 +10,19 @@
             domain="[]"
             limit="80" />
 
-<!-- <act_window id="todo_app.action_todo_task"
+<act_window id="todo_app.action_todo_task"
             name="To-Do Task"
             res_model="todo.task"
             view_mode="tree,form,calendar,graph,pivot"
             target="current"
-            context="{'search_default_filter_my_task': True}" /> -->
+            context="{'search_default_filter_my_task': True}" />
 
-<act_window id="todo_app.action_todo_task"
+<!-- <act_window id="todo_app.action_todo_task"
             name="To-Do Task"
             res_model="todo.task"
             view_mode="tree,form,graph,pivot"
             target="current"
-            context="{'search_default_filter_my_task': True}" />
+            context="{'search_default_filter_my_task': True}" /> -->
 
 <!-- Add option to the "More" button -->
 <act_window id="action_todo_task_stage"
